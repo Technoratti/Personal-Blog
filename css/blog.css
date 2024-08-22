@@ -1,0 +1,178 @@
+.blog-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100px 50px 1fr min-content min-content 50px;
+    grid-template-areas: 
+        "hd hd"
+        "nav nav"
+        "main main"
+        "bio bio"
+        "social social"
+        "ft ft";
+}
+
+/* blog content */
+article {
+    grid-area: main;
+}
+
+.blogPost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 1rem;
+    box-shadow: 2px 2px 6px grey;
+    margin: 1rem;
+
+}
+
+.blogPost h2 {
+    padding-bottom: 1em;
+}
+
+.blogPost-img {
+    width: 80%;
+}
+
+.blog-intro {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+blockquote {
+    
+    border: 2px solid grey;
+    padding: 0.5rem;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+
+/* social */
+#social {
+    grid-area: social;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon {
+    height: 2rem;
+    width: auto;
+    padding: 0.5rem;
+    filter: opacity(0.6);
+    transition: filter 0.5s;
+}
+
+.social-link {
+    margin: 1rem;
+}
+
+.social-icon:hover {
+    filter: opacity(1);
+}
+
+
+/* bio section */
+#bio {
+    grid-area: bio;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 2rem;
+    justify-content: space-between;
+}
+
+#bio h1 {
+    text-align: center;
+}
+
+#bio h3 {
+    text-align: center;
+}
+
+#bio p {
+    text-align: justify;
+
+}
+
+
+.bio-image-container {
+    display: flex;
+    justify-content: center;
+    margin: auto 0;
+    max-width: 100%;
+}
+
+.bio-description {
+    max-width: 100%;
+}
+
+#bio-icon {
+    width: 50%;
+    border: 50%;
+    border: 6px solid grey;
+}
+
+
+/* responsive layout */
+@media(min-width: 900px) {
+    .blog-container {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 100px 1fr 1fr 1fr 50px;
+        grid-template-areas: 
+            "hd hd hd hd hd hd hd hd"
+            "nav nav main main main main main main"
+            "bio bio main main main main main main"
+            "bio bio main main main main main main"
+            "bio bio social social social social social social"
+            "bio bio ft ft ft ft ft ft";
+    }
+
+    
+    /* content */
+    .blogPost {
+        margin: 2rem;
+        padding: 2rem;
+    }
+
+    .sidebar {
+        max-width: 80%;
+    }
+
+    blockquote {
+        padding: 1rem;
+        font-size: 1.2em;
+    }
+
+
+    /* bio section */
+    #bio {
+        justify-content: flex-start;
+        padding-top: 5rem;
+        max-width: 80%;
+        grid-row-start: 2;
+        margin-top: 3rem;
+        z-index: -1;
+
+    
+    }
+
+    #bio-icon {
+        max-width: 70%;
+    }
+
+    .bio-image-container {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 100%;
+
+    }
+
+    .bio-description {
+        max-width: 100%;
+    }
+
+}
