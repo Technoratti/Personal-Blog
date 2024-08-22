@@ -35,6 +35,11 @@ article {
     width: 80%;
 }
 
+figcaption span {
+    font-style: italic;
+    font-weight: bold;
+}
+
 .blog-intro {
     font-weight: bold;
     font-size: 1.1em;
